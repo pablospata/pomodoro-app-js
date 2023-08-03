@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <title>Pomodoro App</title>
 </head>
-<body>
-    <h1>Pomodoro App</h1>
-    <audio controls src="./assets/sounds/stopwatch2.mp3" id="audio" loop></audio>
-    <button type="button" id="iniciar">Iniciar</button>
 
+<body>
+    <!-- <button type="button" id="iniciar">Start</button> -->
+    <!-- <button type="button" id="iniciar">Stop</button> -->
+
+    <div class="container">
+        <h2>2 <span>today</span></h2>
+        <h2>2 <span>this week</span></h2>
+    </div>
+
+    <div class="hint">
+        <h3>Hint:</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cumque dolores impedit atque enim laudantium
+            alias eos temporibus nisi repellendus.</p>
+    </div>
+
+    <div class="level">
+        <div class="experience">
+            <h4>Level: </h4>
+            <h3>Apprentice <span>(1)</span></h3>
+            <progress max="100" value="40"></progress>
+        </div>
+        <div class="next-level">
+            <p>Pomodoros until next level: <span>4</span></p>
+        </div>
+    </div>
+
+    <div class="time-left">
+        <div class="time-left-container">
+            <div class="progress">
+                <progress class="elapsed" max="25" value="5"></progress>
+                <progress class="break" max="5" value="0"></progress>
+            </div>
+            <div class="buttons">
+                <div class="button start">
+                    <p>Start</p>                
+                </div>
+                <div class="button stop">
+                    <p>Stop</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio src="./assets/sounds/stopwatch2.mp3" id="audio" loop></audio>
     <script src="main.js" defer></script>
 </body>
+
 </html>
