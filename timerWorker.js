@@ -1,6 +1,6 @@
 let timer;
-let timeLeft = 10; // 25 minutos en segundos
-let breakTimeLeft = 7; // 5 minutos en segundos
+let timeLeft = 1500; // 25 minutos en segundos
+let breakTimeLeft = 300; // 5 minutos en segundos
 let onBreak = false;
 
 self.addEventListener('message', (event) => {
