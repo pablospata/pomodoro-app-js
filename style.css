@@ -11,8 +11,7 @@ body {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
+    justify-content: center;    
     gap: 2rem;
 }
 
@@ -97,6 +96,12 @@ progress::-webkit-progress-value {
     border-radius: .5rem 0 0 .5rem;    
 }
 
+/* 
+=============================================================
+========================= TIME LIFE =========================
+=============================================================
+*/
+
 .time-left {
     display: flex;
     justify-content: center;
@@ -118,23 +123,35 @@ progress::-webkit-progress-value {
 }
 
 .time-left .progress {
-    display: flex;    
     flex-grow: 1;
+    display: flex;       
+    position: relative; 
 }
 
-.time-left progress {
-    height: 3rem;    
-}
 
-.time-left .progress{
-    display: flex;
-}
 .progress .elapsed {
-    flex-grow: 25;
+    width: calc(25 * 100% / 30);    
 }
 
 .progress .break {
-    flex-grow: 5;
+    width: calc(5 * 100% / 30);    
+}
+
+.time-left .progress progress {
+    height: 3rem;    
+}
+
+.progress p {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: 700;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);    
+    color: #f7f7f7;
 }
 
 .progress progress::-webkit-progress-bar {
@@ -190,20 +207,16 @@ progress::-webkit-progress-value {
     color: green;
 }
 
-/* Efecto hover (cuando el cursor pasa sobre el botón) */
+
 .buttons .button:hover {
-    /* box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.7); */
     background: linear-gradient(to bottom, #D1020C, #960000);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-/* Efecto active (cuando el botón es presionado) */
 .buttons .button:active {
-    /* box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5); */
     background: linear-gradient(to bottom, #850000, #B9010B);
 }
-
 
 @media (min-width: 550px) {
     body {
