@@ -8,6 +8,14 @@ const pararBoton = document.querySelector('.stop');
 const elapsedProgress = document.querySelector('.elapsed');
 const breakProgress = document.querySelector('.break');
 
+let pomodorosHoy = 0;
+
+if (localStorage.getItem('pomodoros')) {
+    pomodorosHoy = parseInt(localStorage.getItem('pomodoros'));        
+}
+
+document.getElementById('pomodoros-hoy').innerText = pomodorosHoy;
+
 iniciarBoton.addEventListener('click', function () {
     ding.play();
     setTimeout(() => {
@@ -48,6 +56,9 @@ worker.addEventListener('message', (event) => {
         ring.play();
         stopwatch.pause();
         onBreak = true;
+        pomodorosHoy++;
+        document.getElementById('pomodoros-hoy').innerText = pomodorosHoy;
+        localStorage.setItem('pomodoros', pomodorosHoy);
     } else if (event.data.type === 'done') {
         dong.play();
         document.querySelector('.elapsed').value = 0;
